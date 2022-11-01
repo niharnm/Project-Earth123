@@ -45,7 +45,7 @@ if(!interaction.isButton() && !interaction.isSelectMenu()) return;
           .setCustomId(`error_reasons`)
           
         ])
-         await interaction.reply({ content: `<a:Loading:920516789883002880> **Creating your ticket (This could take a few seconds)...**`, ephemeral: true })
+         await interaction.reply({ content: `<a:loading_:906786750494564353> **Creating your ticket (This could take a few seconds)...**`, ephemeral: true })
         interaction.guild.channels.create(`${tcname || `ticket-${interaction.user.username}`}`, {
                     permissionOverwrites: [{
                             id: interaction.user.id,

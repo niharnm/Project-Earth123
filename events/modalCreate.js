@@ -13,7 +13,7 @@ client.on('modalSubmit', async (modal) => {
                     
         const embed = new MessageEmbed()
         .setColor(client.config.color.purple)
-        .setTitle(`<a:Loading:920516789883002880> Deleting the Ticket...`)
+        .setTitle(`<a:loading_:906786750494564353> Deleting the Ticket...`)
         .setDescription(`*The ticket will be deleted in about 5 seconds!*`)
         .setFooter(`Action by ${modal.user.username}\n🔷 On Shard: ${modal.guild.shardId}`, modal.guild.iconURL())
 

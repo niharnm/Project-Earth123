@@ -3,16 +3,14 @@ const { Manager } = require("discord-hybrid-sharding");
 const totalShards = "auto";
 const colors = require("colors");
 const shardsPerCluster = 1;
-const config = require(`./config.json`);
 const manager = new Cluster.Manager(`./index.js`, {
     totalShards: totalShards, // Use 'auto' if u want it to be Auto.
     shardsPerClusters: shardsPerCluster, 
     mode: 'process' , 
-    token: process.env.token || config.token,
+    token: process.env.token || client.config.token,
     respawn: true, 
     usev13: true,
 }); // Check pings
-// no, before you hadjust the top stuff & it worked fine
 manager.on("clusterCreate", cluster => {
     console.log(`[SHARDING-MANAGER]: `.magenta + `Launched Cluster #${cluster.id} | ${cluster.id+1}/${cluster.manager.totalClusters} [${cluster.manager.shardsPerClusters}/${cluster.manager.totalShards} Shards]`.green)
 
